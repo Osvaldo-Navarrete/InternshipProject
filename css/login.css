@@ -1,0 +1,529 @@
+::-webkit-scrollbar-track {
+	border: 1px solid black;
+	background-color: #FFFFFF;
+}
+
+::-webkit-scrollbar {
+	width: 15px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #033e75;	
+}
+
+@font-face {
+	font-family: 'Geosans';
+	src: url(../fonts/Geosans.ttf);
+}
+
+
+body{
+    /*background-color: #FDECCE;*/
+    background-image: url("../img/Simple Shiny.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center center;
+	min-height: auto;
+
+} 
+
+/*---------------------------------------------Aquí comienza el código CSS3 del menú despegable---------------------------------------------*/
+
+/*Barra de navegación con efecto Glassmorphism*/header{
+	background: rgba(255, 255, 255, 0.664);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter:  blur( 20px );
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	height: 80px;
+	width: 100%;
+	box-shadow: -5px -2px 7px 0px;
+	position: -webkit-fixed;
+	position: fixed;
+	top: 0px;
+	z-index: 1000;
+}
+.enlace{
+	position: absolute;
+	padding: 13px 0px 0px 15%;
+}
+.logo{
+	height: 55px;
+	margin-left: 10%;
+
+}
+header ul{
+	float: right;
+	margin-right: 30vh;
+	padding-bottom: 100px;
+
+}
+header ul li{
+	display: inline-block; 
+	line-height:2vh;
+	margin: 0px 0px 0 0px;
+	
+} 
+header ul li a{
+	color: #00263A;  
+	font-size: 19px;
+	font-family: 'Geosans';
+	padding: 25px 10px;
+	border-radius: 2px;
+	font-weight: bolder;
+	text-decoration: none;
+
+
+}
+header li a.active:hover, header li a:hover{
+	background: #dbdbdb;
+	color: #976329;
+	transition: .5s;
+	border-radius: 1px;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-ms-transition: .5s;
+	-o-transition: .5s;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	-ms-border-radius: 1px;
+	-o-border-radius: 1px;
+}
+.checkbtn{
+	font-size: 30px;
+	color: #033e75;
+	float: right;
+	line-height: 80px;
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+}
+#check{
+	display: none;
+}
+
+
+header > ul > li{
+    position: relative;
+    display: inline-block;
+}
+
+header > ul > li > a{
+    display: block;
+    padding: 15px 10px;
+    color:#033e75; 
+    font-family: 'Geosans';
+    text-decoration: none;
+}
+header ul li a:hover{
+    background-color: #033e75;
+    transition: all .3s;
+    color: #FFFFFF;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+/*Propiedades del submenú/menú desplegable*/
+
+.submenu{
+	background: rgba(255, 255, 255, 0.918);
+    backdrop-filter:  blur( 3000px );
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.808);
+    position: fixed;
+    z-index: 1000;
+    position: absolute;
+    width: 250%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.submenu li a{
+	display: block;
+	padding: 7px;
+	justify-content: left;
+	color: #033e75;
+	font-family: 'Raleway', sans-serif;
+	text-decoration: none;
+	font-size: 16px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.submenu li a:hover{
+	display: block;
+	padding: 7px;
+	justify-content: left;
+	background: #dbdbdb;
+	color: #976329;
+	font-family: 'Raleway', sans-serif;
+	text-decoration: none;
+	font-size: 16px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+.submenu li {
+	display: block;
+	padding:  3px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	color: #fff;
+	font-family: 'Raleway', sans-serif;
+	text-decoration: none;
+}
+
+header ul li:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+	padding: 15px;
+	padding-top: 5px;
+	margin: 0px;
+	
+}
+
+/*Propiedades del submenú del apartado OTROS*/
+
+header ul .submenuotros{
+	position: absolute;
+	background: rgba(255, 255, 255, 0.911);
+	color: #976329;
+	width: 180%;
+	top: 5px;
+	padding: 5px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.808);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+	-ms-transition: opacity 0.5s;
+	-o-transition: opacity 0.5s;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+}
+
+header .submenuotros li a{
+    display: block;
+    padding: px;
+    color: #033e75; 
+	font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+}
+header .submenuotros li {
+    display: block;
+    padding:  5px;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: #033e75; 
+	font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+}
+
+header .submenu li:hover .submenuotros{
+    visibility: visible;
+    opacity: 1;
+    right: -35%;
+	top: 0;
+}
+
+/*Propiedades de estilo para el submenú del apartado OTROS, con el fin de que se ajuste submenú con submenú visualmente*/
+
+.submenuotros2{
+	position: absolute;
+	background: rgba(255, 255, 255, 0.911);
+	color: #976329;
+	width: 180%;
+	top: 50px;
+	padding: 5px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.808);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.5s;
+	-moz-transition: opacity 0.5s;
+	-ms-transition: opacity 0.5s;
+	-o-transition: opacity 0.5s;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+}
+header .submenuotros2 li a{
+    display: block;
+    padding: px;
+    color: #033e75; 
+	font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+}
+
+.submenu li:hover .submenuotros2{
+    visibility: visible;
+	color: #FFFFFF;
+    opacity: 1;
+    right: -35%;
+    top: 100px;
+    padding: 5px;
+}
+
+/*Propiedades de estilo para el submenú del apartado OTROS, con el fin de que se ajuste submenú con submenú visualmente*/
+.submenuotros3{
+    position: absolute;
+	background: rgba(255, 255, 255, 0.911);
+	color: #976329;
+    width: 180%;
+    top: 5px;
+	padding: 5px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.808);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+}
+header .submenuotros3 li a{
+    display: block;
+    padding: px;
+    color: #033e75; 
+	font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+}
+
+.submenu li:hover .submenuotros3{
+    visibility: visible;
+    opacity: 1;
+    right: -35%;
+    top: 75%;
+    padding: 5px;
+}
+
+
+/*@media para hacer que el contenido cambie de tamaño de acuerdo con el responsive*/
+@media screen and (max-width: 768px){
+	.contenedor {
+        margin-top: 25%;
+        margin-left:-23%;
+        text-align: justify;
+		grid-template-areas:
+
+						 "card card card card card"
+                         "card card card card card"					 
+                         "card card card card card"					 
+                         "card card card card card";
+	}
+
+}
+
+/*@media para que funcione el Checkbtn del menú despegable de manera responsive------------------*/
+@media (max-width:  952px){
+	.enlace{
+	padding-left: 17%; 
+}
+
+	header ul li a{
+	font-size: 16px;
+}
+
+@media (max-width: 858px){
+	.checkbtn{
+		display: block;
+	}
+	ul{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: #FDECCE;
+		top: 64px;
+		left: -200%; 
+		text-align: center;
+		padding-left: 10px;
+		transition: all .69s;
+	}
+	header ul li{
+		display: block;
+		margin: 30px 100px;
+		line-height: 30px;
+		top: 50px;
+	}
+	header ul li .submenu{
+		opacity: 100;
+		margin: 30px 100px;
+		line-height: 30px;
+		top: 1000px;
+	}
+	header ul li a{
+		font-size: 25px;
+		color: #ffffff;
+	}
+	li a:hover, li a:hover.active{
+		background: #FDECCE;
+		color:  #033e75;
+		padding: 15px 40px;
+		border-radius: 50px;
+		transition: all .5s;
+		-webkit-transition: all .5s;
+		-moz-transition: all .5s;
+		-ms-transition: all .5s;
+		-o-transition: all .5s;
+    }
+
+	#check:checked ~ ul{
+		left:  0;
+		background: #033e75;
+    }
+    }
+}
+
+/*Aquí inicia la sección del Footer de la página*/
+
+
+  :root {
+    --card-height: 55vh;
+    --card-width: calc(var(--card-height) / 1.5);
+  }
+
+
+
+  
+  .card {
+    background: #044888;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: absolute;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display:grid;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    font-family: 'Geosans';
+
+	max-width: auto;
+	margin: auto;
+	margin-top: 10%;
+    margin-left: 41%;
+	grid-gap: 20px;
+    text-align: justify;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(4, auto);
+	letter-spacing: 1px;
+
+	grid-template-areas:
+	
+						 "0 card card card 0"
+						 "0 card card card 0"
+						 "0 card card card 0"
+;
+}
+
+.contenedor .card{
+    grid-area: card;
+	box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.87);;
+}
+
+.login { 
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:300px;
+	height:300px;
+	font-family: 'Geosans';
+
+    color: #fff; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.3); 
+    letter-spacing:1px; 
+    text-align:center; 
+}
+.login h1 { 
+    color: #fff; 
+    text-shadow: 0 0 10px rgba(0,0,0,0.3); 
+    letter-spacing:1px; 
+    text-align:center; 
+}
+
+input {
+	width: 80%;
+	margin-bottom: 10px;
+	background: rgba(66, 66, 66, 0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	font-size: 20px;
+}
+input:focus { box-shadow: inset 0 -5px 45px rgb(59, 168, 187), 0 1px 1px rgba(255, 255, 255, 0.2);  font-size: 19px;}
+
+
+
+.btn-primary {background-image: linear-gradient(to right, #00c6ff 0%, #0072ff  51%, #00c6ff  100%)}
+.btn-primary {
+   margin: 0px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 10px #eee;
+   border-radius: 10px;
+   font-family: 'Raleway',sans-serif;
+
+
+ }
+
+ .btn-primary:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
